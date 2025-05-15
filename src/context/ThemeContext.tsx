@@ -1,4 +1,4 @@
-import { createContext, useContext, type ReactNode } from "react";
+import { createContext, type ReactNode } from "react";
 import { useDynamicTheme } from "../hooks/useDynamicTheme";
 import type { ColorAPIColor, DynamicTheme } from "../types/theme-types";
 
@@ -16,10 +16,4 @@ export function ThemeProvider({ paleta, children }: ThemeProviderProps) {
   );
 }
 
-export const useTheme = (): DynamicTheme => {
-  const context = useContext(ThemeContext);
-  if (!context) {
-    throw new Error("useTheme must be used within a ThemeProvider");
-  }
-  return context;
-};
+export default ThemeContext;

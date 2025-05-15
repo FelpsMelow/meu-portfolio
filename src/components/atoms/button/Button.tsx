@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
+import { useTheme } from "../../../hooks/usetheme";
 
-import { useTheme } from "../../../context/ThemeContext";
 
 type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary" | "danger";

@@ -1,0 +1,26 @@
+.divider {
+  margin: 1rem 0;
+
+  &--solid {
+    height: 1px;
+    width: 100%;
+  }
+
+  &--dashed {
+    border-top: 1px dashed;
+  }
+
+  &--dotted {
+    border-top: 1px dotted;
+  }
+
+  &--horizontal {
+    width: 100%;
+    height: 1px;
+  }
+
+  &--vertical {
+    height: 100%;
+    width: 1px;
+  }
+}

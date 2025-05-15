@@ -8,7 +8,7 @@ export default function App() {
   const [paleta, setPaleta] = useState<ColorAPIColor[]>([])
 
   useEffect(() => {
-    getColorScheme("72e34dd").then(setPaleta)
+    getColorScheme("724434d").then(setPaleta)
   }, [])
 
   if (!paleta.length) return <p>Carregando tema...</p>
