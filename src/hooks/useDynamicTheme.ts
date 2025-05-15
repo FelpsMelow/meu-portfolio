@@ -1,24 +1,5 @@
 import { useMemo } from "react";
-
-type HSL = {
-  h: number;
-  s: number;
-  l: number;
-};
-
-type ColorAPIColor = {
-  hex: { value: string };
-  hsl: HSL;
-  contrast: { value: string };
-};
-
-type DynamicTheme = {
-  background: string;
-  text: string;
-  primary: string;
-  secondary: string;
-  accent: string;
-};
+import type { ColorAPIColor, DynamicTheme } from "../types/theme-types";
 
 export function useDynamicTheme(paleta: ColorAPIColor[]): DynamicTheme {
   return useMemo(() => {

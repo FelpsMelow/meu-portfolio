@@ -1,35 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { ThemeProvider } from "./context/ThemeContext"
+import { getColorScheme } from "./services/colorApi"
+import { useEffect, useState } from "react"
+import { Button } from "./components/atoms/button"
+import type { ColorAPIColor } from "./types/theme-types"
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [paleta, setPaleta] = useState<ColorAPIColor[]>([])
+
+  useEffect(() => {
+    getColorScheme("72e34dd").then(setPaleta)
+  }, [])
+
+  if (!paleta.length) return <p>Carregando tema...</p>
 
   return (
-    <>npm 
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <ThemeProvider paleta={paleta}>
+      <Button>
+        teste de botão
+      </Button>
+    </ThemeProvider>
   )
 }
-
-export default App
