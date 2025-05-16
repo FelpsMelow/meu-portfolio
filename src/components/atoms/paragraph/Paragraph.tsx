@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"
-import styles from "../heading/Text.module.scss" // ou crie Paragraph.module.scss se preferir
+import styles from "../heading/Text.module.scss"
 import { useTheme } from "../../../hooks/usetheme"
 
 type ParagraphProps = {

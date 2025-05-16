@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import type { ColorAPIColor, DynamicTheme } from "../types/theme-types";
+import type { ColorAPIColor, DynamicTheme } from "../types/theme";
 
 export function useDynamicTheme(paleta: ColorAPIColor[]): DynamicTheme {
   return useMemo(() => {

@@ -1,23 +1,27 @@
-import { ThemeProvider } from "./context/ThemeContext"
-import { getColorScheme } from "./services/colorApi"
-import { useEffect, useState } from "react"
-import { Button } from "./components/atoms/button"
-import type { ColorAPIColor } from "./types/theme-types"
+import { useEffect, useState } from "react";
+import { ThemeProvider } from "./context/ThemeContext";
+import { getColorScheme } from "./services/colorApi";
+import { Button } from "./components/atoms/button";
+import { AvatarPlayCard } from "./components/molecules/AvatarPlayCard/AvatarPlayCard";
+import { Header } from "./components/organisms/header/Header";
+import type { ColorAPIColor } from "./types/theme";
 
 export default function App() {
-  const [paleta, setPaleta] = useState<ColorAPIColor[]>([])
+  const [paleta, setPaleta] = useState<ColorAPIColor[]>([]);
+
+  const avatarImg = "/images/Group 96.png";
 
   useEffect(() => {
-    getColorScheme("724434d").then(setPaleta)
-  }, [])
+    getColorScheme("74323ad").then(setPaleta);
+  }, []);
 
-  if (!paleta.length) return <p>Carregando tema...</p>
+  if (!paleta.length) return <p>Carregando tema...</p>;
 
   return (
     <ThemeProvider paleta={paleta}>
-      <Button>
-        teste de botão
-      </Button>
+      <Header></Header>
+      <Button>teste de botão</Button>
+      <AvatarPlayCard perfilImg={avatarImg}></AvatarPlayCard>
     </ThemeProvider>
-  )
+  );
 }

@@ -1,6 +1,6 @@
 import { createContext, type ReactNode } from "react";
 import { useDynamicTheme } from "../hooks/useDynamicTheme";
-import type { ColorAPIColor, DynamicTheme } from "../types/theme-types";
+import type { ColorAPIColor, DynamicTheme } from "../types/theme";
 
 const ThemeContext = createContext<DynamicTheme | null>(null);
 

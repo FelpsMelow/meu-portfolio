@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { ColorAPIColor } from "../types/theme-types";
+import type { ColorAPIColor } from "../types/theme";
 
 type ColorSchemeResponse = {
   mode: string;

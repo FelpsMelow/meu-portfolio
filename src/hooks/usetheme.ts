@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import type { DynamicTheme } from "../types/theme-types";
+import type { DynamicTheme } from "../types/theme";
 import ThemeContext from "../context/ThemeContext";
 
 export const useTheme = (): DynamicTheme => {
