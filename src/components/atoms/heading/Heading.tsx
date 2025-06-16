@@ -1,6 +1,6 @@
 import type { ReactNode, ElementType, JSX } from "react"
-import styles from "./Heading.module.scss"
 import { useTheme } from "../../../hooks/usetheme"
+import styles from "./Heading.module.scss"
 
 type HeadingProps = {
   level?: 1 | 2 | 3 | 4 | 5 | 6
@@ -20,7 +20,7 @@ export const Heading = ({
   return (
     <Tag
       className={`${styles.heading} ${variantClass} ${className}`}
-      style={{ color: theme.text }}
+      style={{ color: theme.theme.text }}
     >
       {children}
     </Tag>

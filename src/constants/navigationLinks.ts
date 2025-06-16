@@ -25,8 +25,4 @@ export const links: Links[]= [
         name: 'Experiência',
         href: 'expertise'
     },
-    {
-        name: 'Contato',
-        href: 'contact'
-    },
 ]

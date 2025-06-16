@@ -1,6 +1,6 @@
 import type { ReactNode } from "react"
-import styles from "../heading/Text.module.scss"
 import { useTheme } from "../../../hooks/usetheme"
+import styles from './Paragraph.module.scss'
 
 type ParagraphProps = {
   children: ReactNode
@@ -26,8 +26,8 @@ export const Paragraph = ({
       className={`${baseClass[variant]} ${className}`}
       style={{
         color: variant === "caption"
-          ? theme.accent
-          : theme.text
+          ? theme.theme.accent
+          : theme.theme.text
       }}
     >
       {children}

@@ -1,13 +1,14 @@
-import type { ReactNode } from "react";
+import type { ReactNode, AnchorHTMLAttributes } from "react";
+import './NavItem.scss'
 
-type NavItemProps = {
+type NavItemProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode;
   href: string;
 };
 
-export const NavItem = ({ children, href }: NavItemProps) => {
+export const NavItem = ({ children, href, className = "", ...props }: NavItemProps) => {
   return (
-    <a className="nav-item" href={href}>
+    <a className={`nav-item ${className}`} href={href} {...props}>
       {children}
     </a>
   );

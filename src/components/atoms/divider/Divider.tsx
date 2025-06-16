@@ -20,8 +20,8 @@ export const Divider = ({
     <div
       className={styleClass}
       style={{
-        borderColor: theme.accent,
-        backgroundColor: variant === "solid" ? theme.accent : "transparent"
+        borderColor: theme.theme.accent,
+        backgroundColor: variant === "solid" ? theme.theme.accent : "transparent"
       }}
     />
   )

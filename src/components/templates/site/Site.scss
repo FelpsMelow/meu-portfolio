@@ -1,0 +1,6 @@
+.site-content {
+    display: flex;
+    flex-direction: column;
+    overflow: auto; /* ✅ rola só se necessário */
+    scroll-behavior: smooth;
+}

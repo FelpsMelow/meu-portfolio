@@ -1,0 +1,16 @@
+.header {
+    width: 95%;
+    z-index: 2;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    position: fixed;
+    top: 0;
+    right: 2.5%;
+    
+    img {
+        width: 150px;
+    }
+}

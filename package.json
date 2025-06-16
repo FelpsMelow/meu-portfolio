@@ -10,14 +10,20 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/engine": "^3.8.1",
+    "@tsparticles/react": "^3.0.0",
     "axios": "^1.9.0",
+    "chroma-js": "^3.1.2",
     "clsx": "^2.1.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "sass": "^1.88.0"
+    "react-pick-color": "^2.0.0",
+    "sass": "^1.88.0",
+    "tsparticles": "^3.8.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@types/chroma-js": "^3.1.1",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
     "@vitejs/plugin-react": "^4.4.1",

@@ -1,3 +1,8 @@
+// TODO - Mudar paraum nome que faça mais sentido
+export type DefaultTheme = {
+  theme: 'light' | 'dark'
+}
+
 export type HSL = {
   h: number
   s: number
