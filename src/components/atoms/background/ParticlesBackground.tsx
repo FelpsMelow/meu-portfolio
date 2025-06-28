@@ -1,12 +1,12 @@
-import Particles from "@tsparticles/react";
-import { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo } from "react";
-import { loadSlim } from "@tsparticles/slim";
+import { initParticlesEngine } from "@tsparticles/react";
 import type { Container, MoveDirection, OutMode } from "@tsparticles/engine";
-import { useTheme } from "../../../hooks/usetheme";
+import Particles from "@tsparticles/react";
+import { loadSlim } from "@tsparticles/slim";
 
 type ParticlesBackgroundProps = {
   id: string;
+  backgroundColor: string
 };
 
 const ParticlesBackground = (props: ParticlesBackgroundProps) => {
@@ -16,8 +16,6 @@ const ParticlesBackground = (props: ParticlesBackgroundProps) => {
       await loadSlim(engine);
     });
   }, []);
-
-  const { paletaSelecionada } = useTheme()
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
@@ -48,10 +46,10 @@ const ParticlesBackground = (props: ParticlesBackgroundProps) => {
     },
     particles: {
       color: {
-        value: paletaSelecionada.primary.hex.value,
+        value: props.backgroundColor,
       },
       links: {
-        color: paletaSelecionada.primary.hex.value,
+        color: props.backgroundColor,
         distance: 150,
         enable: true,
         opacity: 0.3,
@@ -86,7 +84,7 @@ const ParticlesBackground = (props: ParticlesBackgroundProps) => {
 
 
     detectRetina: true,
-  }), []);
+  }), [props.backgroundColor]);
 
   return (
     <Particles

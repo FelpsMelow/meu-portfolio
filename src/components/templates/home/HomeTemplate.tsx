@@ -1,11 +1,11 @@
 import type { ReactNode } from "react"
 import { useTheme } from "../../../hooks/usetheme"
-import { AvatarPlayCard } from '../../molecules/AvatarPlayCard/AvatarPlayCard';
 import { DotMatrixPattern } from "../../molecules/dotMatrixPattern/DotMatrixPattern";
-import ParticlesBackground from '../../atoms/background/ParticlesBackground';
+import { AvatarPlayCard } from '../../molecules/AvatarPlayCard/AvatarPlayCard';
+import { Paragraph } from "../../atoms/paragraph/Paragraph";
 import { Heading } from "../../atoms/heading/Heading";
 import { Button } from "../../atoms/button";
-import { Paragraph } from "../../atoms/paragraph/Paragraph";
+import ParticlesBackground from '../../atoms/background/ParticlesBackground';
 import './HomeTemplate.scss'
 
 type HomeTemplate = {
@@ -31,7 +31,7 @@ export const HomeTemplate = () => {
                 </div>
 
                 <div className="container-particle">
-                    <ParticlesBackground id="teste"/>
+                    <ParticlesBackground id="teste" backgroundColor={paletaSelecionada.primary.hex.value}/>
                 </div>
                 
             </div>

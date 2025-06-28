@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useTheme } from '../../../hooks/usetheme'
+import { mapColorsToPalette } from '../../../utils/mappers/colorMappers';
 import { getColorScheme } from '../../../services/colorApi'
 import { ThemeColorPicker } from '../colorPicker/ColorPicker'
 import { Button } from '../../atoms/button/Button';
 import './ConfigTheme.scss'
-import { mapColorsToPalette } from '../../../utils/mappers/colorMappers';
 
 export const ConfigTheme = () => {
 
@@ -27,6 +27,7 @@ export const ConfigTheme = () => {
                 }}
             >
                 <div className="container-header-icon">
+                    {/* TODO - Fazer a imagem do icone de configuração mudar de cor de acordo com o tema da aplicação */}
                     <img 
                         className='header-icon'
                         src="/icons/config.svg"
@@ -35,6 +36,7 @@ export const ConfigTheme = () => {
                     />
                 </div>
                 <hr 
+                    // TODO - Trocar essa tag por um átomo ou molécula existente
                     style={{
                         border: `solid 1.5px ${paletaSelecionada.accent.contrast.value}`
                     }}
@@ -43,6 +45,7 @@ export const ConfigTheme = () => {
                     className={`header-text ${isColapse && 'header-text-colapse'}`}
                 >
                     <h2>
+                        {/* TODO - Trocar por um átomo de heading */}
                         Escolha uma cor
                     </h2>
                 </div>
