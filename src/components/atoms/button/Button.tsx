@@ -18,10 +18,10 @@ export const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const classes = clsx("btn", `btn--${variant}`, `btn--${size}`, className);
-  const theme = useTheme()
+  const {paletaSelecionada} = useTheme()
 
   return (
-    <button type={type} className={classes} {...props} style={{backgroundColor:theme.theme[variant], color:theme.theme.text}}>
+    <button type={type} className={classes} {...props} style={{backgroundColor:paletaSelecionada[variant].hex.value, color: paletaSelecionada.accent.contrast.value}}>
       {children}
     </button>
   );

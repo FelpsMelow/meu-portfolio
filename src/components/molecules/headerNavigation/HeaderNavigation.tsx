@@ -6,7 +6,7 @@ import { useTheme } from '../../../hooks/usetheme';
 
 export const HeaderNavigation = () => {
 
-    const theme = useTheme()
+    const { paletaSelecionada } = useTheme()
 
     return (
         <nav className="header-navigation">
@@ -16,9 +16,10 @@ export const HeaderNavigation = () => {
                         <Button onClick={() => scrollToSection(link.href)} key={index}>
                             {link.name}
                         </Button>
-                        <div className='divider' style={{
-                            background: theme.theme.primary
-                        }}></div>
+                        <div
+                            className='divider'
+                            style={{ background: paletaSelecionada.background.hex.value }}
+                        />
                     </div>
                 ))
             }

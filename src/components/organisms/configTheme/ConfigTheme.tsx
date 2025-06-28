@@ -4,16 +4,17 @@ import { getColorScheme } from '../../../services/colorApi'
 import { ThemeColorPicker } from '../colorPicker/ColorPicker'
 import { Button } from '../../atoms/button/Button';
 import './ConfigTheme.scss'
+import { mapColorsToPalette } from '../../../utils/mappers/colorMappers';
 
 export const ConfigTheme = () => {
 
-    const {setSelectedColor, setPaletaSelecionada, theme} = useTheme()
+    const {setSelectedColor, setPaletaSelecionada, paletaSelecionada} = useTheme()
     const [color, setColor] = useState<string>('');
     const [isColapse, setIsColapse] = useState(true)
     
     function handleColorPicker(newColor: string) {
         setSelectedColor(newColor)
-        getColorScheme(newColor).then(setPaletaSelecionada)
+        getColorScheme(newColor).then( (res) => {setPaletaSelecionada(mapColorsToPalette(res))})
     }
 
     return (
@@ -21,21 +22,21 @@ export const ConfigTheme = () => {
             <header
                 className={`header-config-theme ${isColapse && "header-config-theme-colapse"}`}
                 style={{
-                    background: theme.accent,
-                    color: theme.text
+                    background: paletaSelecionada.accent.hex.value,
+                    color: paletaSelecionada.accent.contrast.value
                 }}
             >
                 <div className="container-header-icon">
                     <img 
                         className='header-icon'
-                        src="../../../../public/icons/config.svg"
+                        src="/icons/config.svg"
                         alt="icone de configuração"
                         onClick={() => setIsColapse(!isColapse)}
                     />
                 </div>
                 <hr 
                     style={{
-                        border: `solid 1.5px ${theme.background}`
+                        border: `solid 1.5px ${paletaSelecionada.accent.contrast.value}`
                     }}
                 />
                 <div 
@@ -49,7 +50,7 @@ export const ConfigTheme = () => {
             <div 
                 className={`config-theme-color-picker ${isColapse && 'config-theme-color-picker-colapse'}`}
                 style={{
-                    background: theme.secondary
+                    background: paletaSelecionada.accent.hex.value
                 }}
             >
                 <ThemeColorPicker onChange={setColor}/>

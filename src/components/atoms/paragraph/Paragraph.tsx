@@ -13,7 +13,7 @@ export const Paragraph = ({
   className = "",
   variant = "body"
 }: ParagraphProps) => {
-  const theme = useTheme()
+  const { paletaSelecionada } = useTheme()
 
   const baseClass = {
     body: styles.paragraph,
@@ -26,8 +26,8 @@ export const Paragraph = ({
       className={`${baseClass[variant]} ${className}`}
       style={{
         color: variant === "caption"
-          ? theme.theme.accent
-          : theme.theme.text
+          ? paletaSelecionada.accent.contrast.value
+          : paletaSelecionada.background.contrast.value
       }}
     >
       {children}

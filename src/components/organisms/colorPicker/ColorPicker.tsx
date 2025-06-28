@@ -10,7 +10,7 @@ type ThemeColorPickerProps = {
 export const ThemeColorPicker = ({ onChange }: ThemeColorPickerProps) => {
   const [color, setColor] = useState("#fff");
 
-  const theme = useTheme()
+  const { paletaSelecionada } = useTheme()
 
   const handleChange = (color: { hex: string }) => {
     setColor(color.hex);
@@ -26,7 +26,7 @@ export const ThemeColorPicker = ({ onChange }: ThemeColorPickerProps) => {
         // TODO - Mudar o tema de acordo com o estado da aplicação
         theme={{
           background: 'transparent',
-          inputBackground: theme.theme.background,
+          inputBackground: paletaSelecionada.background.hex.value,
           borderColor: 'none',
           borderRadius: '0',
           color: 'white',

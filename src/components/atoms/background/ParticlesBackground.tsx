@@ -17,7 +17,7 @@ const ParticlesBackground = (props: ParticlesBackgroundProps) => {
     });
   }, []);
 
-  const theme = useTheme()
+  const { paletaSelecionada } = useTheme()
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
     console.log(container);
@@ -48,10 +48,10 @@ const ParticlesBackground = (props: ParticlesBackgroundProps) => {
     },
     particles: {
       color: {
-        value: theme.theme.background,
+        value: paletaSelecionada.primary.hex.value,
       },
       links: {
-        color: theme.theme.background,
+        color: paletaSelecionada.primary.hex.value,
         distance: 150,
         enable: true,
         opacity: 0.3,

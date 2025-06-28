@@ -12,7 +12,7 @@ export const Divider = ({
   orientation = "horizontal",
   className = ""
 }: DividerProps) => {
-  const theme = useTheme()
+  const { paletaSelecionada } = useTheme()
 
   const styleClass = `${styles.divider} ${styles[`divider--${variant}`]} ${styles[`divider--${orientation}`]} ${className}`
 
@@ -20,8 +20,8 @@ export const Divider = ({
     <div
       className={styleClass}
       style={{
-        borderColor: theme.theme.accent,
-        backgroundColor: variant === "solid" ? theme.theme.accent : "transparent"
+        borderColor: paletaSelecionada.accent.hex.value,
+        backgroundColor: variant === "solid" ? paletaSelecionada.accent.hex.value : "transparent"
       }}
     />
   )

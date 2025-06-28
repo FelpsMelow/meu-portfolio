@@ -5,13 +5,13 @@ import './Home.scss'
 
 export const Home = () => {
 
-    const theme = useTheme()
+    const {paletaSelecionada} = useTheme()
 
     return (
         <section id="home" className="home">
             <>
                 {/* TODO - Exibir isso sõ quando estiver em dev. */}
-                <ColorPaletteViewer theme={theme.theme}/>
+                <ColorPaletteViewer palette={paletaSelecionada}/>
                 <HomeTemplate></HomeTemplate>
             </>
         </section>

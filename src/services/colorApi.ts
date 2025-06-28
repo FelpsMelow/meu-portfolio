@@ -13,7 +13,7 @@ export async function getColorScheme(
   hex: string,
   mode: string = "analogic",
   count: number = 14
-): Promise<ColorAPIColor[]> {
+) {
   const url = `https://www.thecolorapi.com/scheme?hex=${hex}&mode=${mode}&count=${count}`;
 
   try {

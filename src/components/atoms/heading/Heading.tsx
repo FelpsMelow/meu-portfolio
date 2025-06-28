@@ -13,14 +13,14 @@ export const Heading = ({
   children,
   className = ""
 }: HeadingProps) => {
-  const theme = useTheme()
+  const { paletaSelecionada } = useTheme()
   const Tag = (`h${level}` as keyof JSX.IntrinsicElements) as ElementType
   const variantClass = styles[`heading--h${level}`]
 
   return (
     <Tag
       className={`${styles.heading} ${variantClass} ${className}`}
-      style={{ color: theme.theme.text }}
+      style={{ color: paletaSelecionada.accent.contrast.value }}
     >
       {children}
     </Tag>

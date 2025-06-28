@@ -5,8 +5,8 @@ import { DotMatrixPattern } from "../../molecules/dotMatrixPattern/DotMatrixPatt
 import ParticlesBackground from '../../atoms/background/ParticlesBackground';
 import { Heading } from "../../atoms/heading/Heading";
 import { Button } from "../../atoms/button";
-import './HomeTemplate.scss'
 import { Paragraph } from "../../atoms/paragraph/Paragraph";
+import './HomeTemplate.scss'
 
 type HomeTemplate = {
     particlesBackground: ReactNode,
@@ -18,17 +18,16 @@ type HomeTemplate = {
 
 export const HomeTemplate = () => {
 
-    const theme = useTheme()
-    const avatarImg = '../../../../public/images/Group 96.png'
+    const { paletaSelecionada } = useTheme()
 
     return (
         <div className="home-template">
             <div
                 className="left"
-                style={{background: theme.theme.accent}}
+                style={{backgroundImage: `linear-gradient(90deg, ${paletaSelecionada.background.hex.value}, ${paletaSelecionada.primary.hex.value})`}}
             >
                 <div className="container-play-card">
-                    <AvatarPlayCard perfilImg={avatarImg}/>
+                    <AvatarPlayCard/>
                 </div>
 
                 <div className="container-particle">
@@ -38,7 +37,7 @@ export const HomeTemplate = () => {
             </div>
             <div
                 className="right"
-                style={{background: theme.theme.background}}
+                style={{background: paletaSelecionada.primary.hex.value}}
             >
                 <div className="container-dot-matrix">
                     <DotMatrixPattern rows={15} columns={3}/>

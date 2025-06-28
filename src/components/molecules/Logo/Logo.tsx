@@ -1,14 +1,31 @@
-// TODO - Deixar estilo dinamico com o meu tema
-
 import { NavItem } from "../../atoms/navItem/NavItem"
+import { useTheme } from "../../../hooks/usetheme"
+import './Logo.scss'
 
 export const Logo = () => {
+
+    const { paletaSelecionada } = useTheme()
+
     return (
         <NavItem href="#home">
-            <div className="logo__text">
-                <span className="logo__title">FELIPE MELO</span>
+            <div className="logo-text">
+                <span
+                    className="logo-title"
+                    style={{
+                        color: paletaSelecionada.background.contrast.value
+                    }}
+                >
+                    FELIPE MELO
+                </span>
                 <br />
-                <span className="logo__subtitle">FULL-STACK DEVELOPER</span>
+                <span
+                    className="logo-subtitle"
+                    style={{
+                        color: paletaSelecionada.background.contrast.value
+                    }}
+                >
+                    FULL-STACK DEVELOPER
+                </span>
             </div>
         </NavItem>
     )

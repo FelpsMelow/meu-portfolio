@@ -7,8 +7,8 @@ type DotProps = {
 
 
 export const Dot = ({key}: DotProps) => {
-    const { theme } = useTheme()
+    const { paletaSelecionada } = useTheme()
     return (
-        <div className="dot" key={key} style={{background: theme.secondary}}/>
+        <div className="dot" key={key} style={{background: paletaSelecionada.accent.hex.value}}/>
     )
 }

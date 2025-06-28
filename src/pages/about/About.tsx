@@ -1,5 +1,5 @@
 import './About.scss'
-import { AboutTemplate } from '../../components/templates/about/About.Template';
+import { AboutTemplate } from '../../components/templates/about/AboutTemplate';
 
 export const About = () => {
     return (
