@@ -10,19 +10,15 @@ export const links: Links[]= [
         href: 'about'
     },
     {
-        name: 'Serviços',
-        href: 'services'
-    },
-    {
         name: 'Portifólio',
-        href: 'portifolio'
+        href: 'portfolio'
     },
     {
-        name: 'Depoimento',
+        name: 'Depoimentos',
         href: 'testimonial'
     },
     {
-        name: 'Experiência',
-        href: 'expertise'
+        name: 'Postagens Recentes',
+        href: 'latestPosts'
     },
 ]

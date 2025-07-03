@@ -3,6 +3,8 @@ import { useTheme } from '../../hooks/usetheme'
 import { ColorPaletteViewer } from '../../utils/devTools/ColorPaletteViewer'
 import './Home.scss'
 
+// TODO - Colocar ultimas postagens do linkedin em meu portifólio
+
 export const Home = () => {
 
     const {paletaSelecionada} = useTheme()

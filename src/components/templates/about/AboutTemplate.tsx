@@ -1,31 +1,41 @@
+import { TECH_ICONS } from '../../../constants/icons';
 import { useTheme } from '../../../hooks/usetheme'
 import { Button } from '../../atoms/button'
 import { Heading } from '../../atoms/heading/Heading'
 import { Paragraph } from '../../atoms/paragraph/Paragraph';
+import { SectionTag } from '../../atoms/sectionTag/sectionTag';
 import { DotMatrixPattern } from '../../molecules/dotMatrixPattern/DotMatrixPattern';
+import { TechCarousel } from '../../organisms/techCarousel/TechCarousel';
 import './AboutTemplate.scss'
 
 export const AboutTemplate = () => {
     const  { paletaSelecionada } = useTheme()
     return (
-        <div className="about-template" style={{backgroundImage: `linear-gradient(45deg, ${paletaSelecionada.background.hex.value}, ${paletaSelecionada.primary.hex.value})`}}>
+        <div 
+            className="about-template"
+            style={{backgroundImage: `linear-gradient(45deg, ${paletaSelecionada.background.hex.value}, ${paletaSelecionada.primary.hex.value})`}}
+        >
             <section className='presentation'>
+                {/* TODO - Melhorar a orientação dos componentes na tela */}
                 <div className='presentation-text'>
-                    {/* TODO - Preciso dar outro nome para essa parte do meu portifólio, pois não se trata de um botão */}
-                    <Button variant='secondary' className='btn-context'>
+                    <SectionTag>
                         Sobre mim
-                    </Button>
-                    <Heading level={1}>
+                    </SectionTag>
+                    <Heading level={2}>
                         Por que me contratar para o seu próximo projeto?
                     </Heading>
                     <>
                         <Paragraph>
-                            Sou Desenvolvedor Fullstack e Arquiteto de Soluções, com experiência em Desenvolvimento Web, Automação de Processos (RPA) e Integrações de Sistemas. Tenho como foco criar soluções eficientes e escaláveis que simplificam processos complexos, otimizam operações e geram inteligência de negócio.
+                            Sou Desenvolvedor Fullstack e Arquiteto de Soluções com experiência em <strong>desenvolvimento web</strong>, <strong>automação de processos (RPA)</strong> e <strong>integrações de sistemas</strong>. Tenho me dedicado a criar aplicações que sejam práticas, bem estruturadas e que realmente ajudem a resolver problemas do dia a dia.
                         </Paragraph>
+
+
                         <Paragraph>
-                            Meu objetivo é entregar sistemas funcionais, estáveis e de fácil manutenção, sempre com alta performance e um design limpo. De plataformas web a bots de automação, atuo com profundidade técnica e uma abordagem prática para garantir que seu sistema não apenas funcione, mas funcione melhor.
+                            Gosto de entender o contexto do projeto, conversar com as pessoas envolvidas e buscar soluções que façam sentido tanto tecnicamente quanto para o negócio. Procuro sempre manter o código organizado, o design limpo e a comunicação clara durante todo o processo.
                         </Paragraph>
                     </>
+
+                    <TechCarousel techIcons={TECH_ICONS}></TechCarousel>
                     <Button variant='secondary'>
                         Ver projetos
                     </Button>

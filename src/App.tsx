@@ -7,6 +7,7 @@ import { Home } from './pages/home/Home';
 import { About } from "./pages/about/About";
 import { ConfigTheme } from "./components/organisms/configTheme/ConfigTheme";
 import { mapColorsToPalette } from "./utils/mappers/colorMappers";
+import { Portfolio } from "./pages/portfolio/Portfolio";
 
 export default function App() {
 
@@ -28,6 +29,7 @@ export default function App() {
         <ConfigTheme/>
         <Home />
         <About />
+        <Portfolio/>
       </SiteTemplate>
     </ThemeProvider>
   );

@@ -7,6 +7,7 @@ return (
             <Header/>
             <main>{children}</main>
             {/* <Footer /> */}
+            {/* TODO - Colocar a opção de voltar ao home do site a partir da terceira tela. posso fazer uma validação de scroll ou current page. */}
         </div>
         
     );

@@ -21,11 +21,14 @@ export const HomeTemplate = () => {
     const { paletaSelecionada } = useTheme()
 
     return (
-        <div className="home-template">
+        <div
+            className="home-template"
+            style={{backgroundImage: `linear-gradient(90deg, ${paletaSelecionada.background.hex.value}, ${paletaSelecionada.primary.hex.value})`}}
+        >
             <div
                 className="left"
-                style={{backgroundImage: `linear-gradient(90deg, ${paletaSelecionada.background.hex.value}, ${paletaSelecionada.primary.hex.value})`}}
             >
+                {/* TODO - Mudar a forma comoo eu estou organizando esse teamplate */}
                 <div className="container-play-card">
                     <AvatarPlayCard/>
                 </div>
@@ -35,10 +38,7 @@ export const HomeTemplate = () => {
                 </div>
                 
             </div>
-            <div
-                className="right"
-                style={{background: paletaSelecionada.primary.hex.value}}
-            >
+            <div className="right">
                 <div className="container-dot-matrix">
                     <DotMatrixPattern rows={15} columns={3}/>
                 </div>

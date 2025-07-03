@@ -62,7 +62,7 @@ const ParticlesBackground = (props: ParticlesBackgroundProps) => {
           default: "bounce" as OutMode,
         },
         random: true,
-        speed: 1,
+        speed: 2,
         straight: false,
       },
       number: {
