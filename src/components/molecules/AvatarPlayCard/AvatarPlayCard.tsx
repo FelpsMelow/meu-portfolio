@@ -7,6 +7,7 @@ export const AvatarPlayCard = () => {
   return (
     <div className="avatar-play-card-wrapper">
       <div className="background-avatar-play-card-wrapper">
+        {/* TODO - Tranformar isso em um atom */}
         <svg
           viewBox="0 0 1200 1266"
           fill="none"

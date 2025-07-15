@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react'
-import './sectionTag.scss'
 import { useTheme } from '../../../hooks/usetheme'
+import './sectionTag.scss'
 
 type SectionTagProps = {
     children: ReactNode
@@ -16,7 +16,7 @@ export const SectionTag = ({children}: SectionTagProps) => {
             className='section-tag'
             style={{
                 background: paletaSelecionada.primary.hex.value,
-                color: paletaSelecionada.background.contrast.value
+                color: paletaSelecionada.accent.contrast.value
             }}
         >
             {children}

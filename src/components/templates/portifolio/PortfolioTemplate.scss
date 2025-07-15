@@ -1,4 +1,42 @@
 .portfolio-template {
     width: 100%;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .potfolio-presentation {
+        width: 75%;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }    
+    
+    .project-cards {
+        width: 75%;
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+
+        .left {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .right {
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+
+    .container-dot-matrix {
+        position: relative;
+        right: calc(100% - 10px);
+        top: 80px;
+    }
+
 }           

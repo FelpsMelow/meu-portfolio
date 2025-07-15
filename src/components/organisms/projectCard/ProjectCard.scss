@@ -1,0 +1,67 @@
+.hover-card {
+    position: relative;
+    width: 100%;
+    height: 270px;
+    border-radius: 2px;
+    overflow: hidden;
+    border-radius: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    
+    &:hover .hover-card-overlay {
+        opacity: 1;
+    }
+    
+    &:hover .hover-card-image {
+        transform: scale(1.10);
+    }
+}
+
+.hover-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.hover-card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    .container-text {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .container-icon {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        filter: brightness(2);
+        transform: rotate(-90deg);
+    }
+}
+
+.hover-card-title {
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    padding: 16px;
+}

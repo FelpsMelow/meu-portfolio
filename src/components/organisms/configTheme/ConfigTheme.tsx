@@ -5,6 +5,7 @@ import { getColorScheme } from '../../../services/colorApi'
 import { ThemeColorPicker } from '../colorPicker/ColorPicker'
 import { Button } from '../../atoms/button/Button';
 import './ConfigTheme.scss'
+import { ConfigIcon } from '../../atoms/icons/configIcon';
 
 export const ConfigTheme = () => {
 
@@ -22,23 +23,18 @@ export const ConfigTheme = () => {
             <header
                 className={`header-config-theme ${isColapse && "header-config-theme-colapse"}`}
                 style={{
-                    background: paletaSelecionada.accent.hex.value,
-                    color: paletaSelecionada.accent.contrast.value
+                    background: paletaSelecionada.secondary.hex.value,
+                    color: paletaSelecionada.background.contrast.value
                 }}
             >
                 <div className="container-header-icon">
-                    {/* TODO - Fazer a imagem do icone de configuração mudar de cor de acordo com o tema da aplicação */}
-                    <img 
-                        className='header-icon'
-                        src="/icons/config.svg"
-                        alt="icone de configuração"
-                        onClick={() => setIsColapse(!isColapse)}
-                    />
+                    <div className='container-config-icon'>
+                        <ConfigIcon onClick={() => setIsColapse(!isColapse)}/>
+                    </div>
                 </div>
                 <hr 
-                    // TODO - Trocar essa tag por um átomo ou molécula existente
                     style={{
-                        border: `solid 1.5px ${paletaSelecionada.accent.contrast.value}`
+                        border: `solid 1.5px ${paletaSelecionada.background.hex.value}`
                     }}
                 />
                 <div 
@@ -53,7 +49,7 @@ export const ConfigTheme = () => {
             <div 
                 className={`config-theme-color-picker ${isColapse && 'config-theme-color-picker-colapse'}`}
                 style={{
-                    background: paletaSelecionada.accent.hex.value
+                    background: paletaSelecionada.secondary.hex.value
                 }}
             >
                 <ThemeColorPicker onChange={setColor}/>

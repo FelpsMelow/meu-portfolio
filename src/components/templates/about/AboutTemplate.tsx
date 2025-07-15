@@ -1,5 +1,6 @@
 import { TECH_ICONS } from '../../../constants/icons';
 import { useTheme } from '../../../hooks/usetheme'
+import { scrollToSection } from '../../../utils/scrollToSection';
 import { Button } from '../../atoms/button'
 import { Heading } from '../../atoms/heading/Heading'
 import { Paragraph } from '../../atoms/paragraph/Paragraph';
@@ -16,7 +17,6 @@ export const AboutTemplate = () => {
             style={{backgroundImage: `linear-gradient(45deg, ${paletaSelecionada.background.hex.value}, ${paletaSelecionada.primary.hex.value})`}}
         >
             <section className='presentation'>
-                {/* TODO - Melhorar a orientação dos componentes na tela */}
                 <div className='presentation-text'>
                     <SectionTag>
                         Sobre mim
@@ -36,7 +36,7 @@ export const AboutTemplate = () => {
                     </>
 
                     <TechCarousel techIcons={TECH_ICONS}></TechCarousel>
-                    <Button variant='secondary'>
+                    <Button variant='secondary' onClick={() => scrollToSection('portfolio')}>
                         Ver projetos
                     </Button>
                 </div>

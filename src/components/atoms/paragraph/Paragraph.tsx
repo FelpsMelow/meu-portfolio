@@ -25,9 +25,7 @@ export const Paragraph = ({
     <p
       className={`${baseClass[variant]} ${className}`}
       style={{
-        color: variant === "caption"
-          ? paletaSelecionada.accent.contrast.value
-          : paletaSelecionada.background.contrast.value
+        color: paletaSelecionada.accent.contrast.value
       }}
     >
       {children}

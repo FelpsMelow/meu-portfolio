@@ -1,24 +1,43 @@
-import './ProjectCard.scss';
+import { useTheme } from "../../../hooks/usetheme";
+import { FullscreenIcon } from "../../atoms/icons/fullscrennIcon";
+import { Paragraph } from "../../atoms/paragraph/Paragraph";
+import { hexToRgba } from '../../../utils/hexToRgba';
+import "./ProjectCard.scss";
+import { type ReactNode } from "react";
 
-type ProjectCardProps = {
-    name: string;
-    role: string;
-    image: string;
-    size?: 'small' | 'large';
-    // Adicione outras props conforme necessário
-};
+interface ProjectCardProps {
+    title?: string;
+    imageUrl: string;
+    children: ReactNode
+}
 
-// TODO - Ver como isso pode melhorar
+export const ProjectCard = ({ title = "Projeto", imageUrl, children }: ProjectCardProps) => {
 
-export const ProjectCard = ({ name, role, image, size = 'large' }: ProjectCardProps) => {
+    const { paletaSelecionada } = useTheme()
+
     return (
-        <div className={`project-card project-card-${size}`}>
-            <img className="project-card-image" src={image} alt={name} />
-            <div className="project-card-info">
-                <span className="project-card-name">{name}</span>
-                <span className="project-card-role">{role}</span>
+        <div className="hover-card">
+            <img
+                src={imageUrl}
+                alt={title}
+                className="hover-card-image"
+            />
+            <div
+                className="hover-card-overlay"
+                style={{
+                    background: hexToRgba(paletaSelecionada.primary.hex.value, 0.7)
+                }}
+            >
+                <div className="container-text">
+                    <h3 className="hover-card-title">{title}</h3>
+                    <Paragraph>
+                        {children}
+                    </Paragraph>
+                </div>
+                <div className="container-icon">
+                    <FullscreenIcon/>
+                </div>
             </div>
-            {/* Adicione botões ou ícones aqui, se quiser */}
         </div>
     );
 };

@@ -19,3 +19,20 @@ body * {
 #root {
   width: 100%;
 }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d3cece39;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4c5157;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7c848d;
+}
