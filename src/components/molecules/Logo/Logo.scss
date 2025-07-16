@@ -1,5 +1,23 @@
+.container-logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .container-logo-icon {
+        cursor: pointer;
+        transition: transform 0.5s ease;
+    }
+
+    .container-logo-icon:hover {
+        transform: scale(1.2);
+    }
+}
+
 .logo-text {
     cursor: pointer;
+
+    margin-left: 15px;
+
     .logo-title {
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
