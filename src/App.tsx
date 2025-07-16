@@ -1,3 +1,4 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import { getColorScheme } from "./services/colorApi";
@@ -24,13 +25,22 @@ export default function App() {
   if (!paleta) return <p>Carregando tema...</p>;
 
   return (
+
     <ThemeProvider paleta={paleta}>
-      <SiteTemplate>
-        <ConfigTheme/>
-        <Home />
-        <About />
-        <Portfolio/>
-      </SiteTemplate>
+      <Router>
+        <Routes>
+          <Route path="/" element={
+            <SiteTemplate>
+                <ConfigTheme/>
+                <Home />
+                <About />
+                <Portfolio/>
+              </SiteTemplate>
+          }/>
+          <Route path="/projeto" element={'teste'} />
+          <Route path="*" element={<div><h1>404</h1></div>} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }
